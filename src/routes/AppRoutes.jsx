@@ -34,8 +34,11 @@ const ProtectedRoute = ({ children }) => {
 };
 
 const AppRoutes = () => {
+  // Dynamic basename for GitHub Pages
+  const basename = window.location.pathname.startsWith('/Portofolio') ? '/Portofolio' : '/';
+  
   return (
-    <BrowserRouter basename="/Portofolio">
+    <BrowserRouter basename={basename}>
       <Routes>
         {/* Single Page Portfolio */}
         <Route path="/" element={<OnePage />} />
