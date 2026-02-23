@@ -35,7 +35,7 @@ const ProtectedRoute = ({ children }) => {
 
 const AppRoutes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Portofolio">
       <Routes>
         {/* Single Page Portfolio */}
         <Route path="/" element={<OnePage />} />
