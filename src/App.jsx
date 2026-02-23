@@ -2,6 +2,7 @@ import AppRoutes from "./routes/AppRoutes";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AlertProvider } from "./context/AlertContext";
 import AuroraBackground from "./components/AuroraBackground";
+import OnePage from "./pages/user/OnePage";
 
 function App() {
   return (
@@ -10,8 +11,11 @@ function App() {
         {/* Aurora Background Effect */}
         <AuroraBackground />
         
+        {/* Temporarily bypass router for testing */}
+        <OnePage />
+        
         {/* Main App Routes */}
-        <AppRoutes />
+        {/* <AppRoutes /> */}
       </AlertProvider>
     </ThemeProvider>
   );

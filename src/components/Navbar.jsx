@@ -1,6 +1,3 @@
-import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext";
-
 const Navbar = () => {
   return (
     <div style={{ 
