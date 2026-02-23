@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "clean": "rm -rf dist",
+    "clean": "rd /s /q dist 2>nul || echo 'dist folder not found'",
     "preview": "vite preview",
     "deploy": "npm run clean && npm run build && git add dist && git commit -m 'Deploy to GitHub Pages' && git push"
   },
