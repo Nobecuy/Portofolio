@@ -1,0 +1,193 @@
+/* Light Theme Styles */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-blue: #3b82f6;
+  --accent-green: #10b981;
+  --accent-yellow: #f59e0b;
+  --accent-red: #ef4444;
+}
+
+/* Apply light theme to common elements */
+.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light .bg-gray-900 {
+  background-color: var(--bg-primary) !important;
+}
+
+.light .bg-gray-800 {
+  background-color: var(--bg-secondary) !important;
+}
+
+.light .bg-gray-700 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.light .bg-gray-600 {
+  background-color: var(--border-primary) !important;
+}
+
+.light .text-white {
+  color: var(--text-primary) !important;
+}
+
+.light .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+.light .text-gray-500 {
+  color: var(--text-tertiary) !important;
+}
+
+.light .text-gray-600 {
+  color: var(--text-tertiary) !important;
+}
+
+.light .border-gray-800 {
+  border-color: var(--border-primary) !important;
+}
+
+.light .border-gray-700 {
+  border-color: var(--border-secondary) !important;
+}
+
+.light .border-gray-600 {
+  border-color: var(--border-secondary) !important;
+}
+
+/* Light theme for navigation */
+.light nav {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: var(--border-primary) !important;
+}
+
+/* Light theme for cards */
+.light .bg-gray-800\/50 {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+}
+
+.light .bg-gray-800\/70 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.light .hover\\:bg-gray-800\/70:hover {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+.light .hover\\:bg-gray-800\\/80:hover {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+/* Light theme for buttons */
+.light .bg-purple-600 {
+  background-color: var(--accent-purple) !important;
+}
+
+.light .hover\\:bg-purple-700:hover {
+  background-color: #7c3aed !important;
+}
+
+.light .bg-gray-800 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.light .hover\\:bg-gray-700:hover {
+  background-color: var(--border-primary) !important;
+}
+
+/* Light theme for inputs */
+.light input,
+.light textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-primary) !important;
+}
+
+.light input:focus,
+.light textarea:focus {
+  border-color: var(--accent-purple) !important;
+}
+
+/* Light theme for progress bars */
+.light .bg-gray-700 {
+  background-color: var(--border-primary) !important;
+}
+
+/* Light theme for loading screen */
+.light .bg-gray-900 {
+  background-color: var(--bg-primary) !important;
+}
+
+.light .text-gray-400 {
+  color: var(--text-secondary) !important;
+}
+
+/* Light theme for skill cards */
+.light .group-hover\\:text-white:hover {
+  color: var(--text-primary) !important;
+}
+
+/* Light theme for chroma cards */
+.light .chroma-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: var(--border-primary) !important;
+}
+
+.light .chroma-info {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent) !important;
+}
+
+.light .chroma-info .name {
+  color: var(--text-primary) !important;
+}
+
+.light .chroma-info .handle {
+  color: var(--text-tertiary) !important;
+}
+
+.light .chroma-info .role {
+  color: var(--text-secondary) !important;
+}
+
+/* Light theme for aurora background */
+.light .aurora-bg {
+  opacity: 0.3;
+}
+
+/* Light theme for custom cursor */
+.light .mix-blend-difference {
+  mix-blend-mode: normal;
+}
+
+.light .bg-purple-500 {
+  background-color: var(--accent-purple) !important;
+}
+
+/* Light theme scrollbars */
+.light ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: var(--border-secondary);
+}

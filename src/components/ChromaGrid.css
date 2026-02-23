@@ -1,0 +1,212 @@
+.chroma-grid {
+  --x: 50%;
+  --y: 50%;
+  --r: 280px;
+  --cols: 3;
+  --rows: 2;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  /* Dynamic height based on rows - each row ~320px */
+  min-height: calc(var(--rows) * 320px);
+  background: rgba(17, 17, 20, 0.3);
+  border-radius: 32px;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .chroma-grid {
+    --cols: 2;
+    /* Dynamic height - will be calculated from --rows */
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-grid {
+    --cols: 1;
+    /* Dynamic height - will be calculated from --rows */
+    padding: 1rem;
+  }
+}
+
+/* Card styling - Monochrome default */
+.chroma-card {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(30, 30, 35, 0.9) 0%,
+    rgba(20, 20, 25, 0.95) 100%
+  );
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  min-height: 280px;
+}
+
+/* Image wrapper - Grayscale by default */
+.chroma-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+}
+
+.chroma-img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(20, 20, 25, 0.9) 100%
+  );
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.chroma-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.5) contrast(1.1);
+  transform: scale(1.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* On hover: full color */
+.chroma-card:hover .chroma-img-wrapper img {
+  filter: grayscale(0%) brightness(1) contrast(1);
+  transform: scale(1);
+}
+
+.chroma-card:hover .chroma-img-wrapper::after {
+  opacity: 0.5;
+}
+
+/* Card content */
+.chroma-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+  transform: translateY(10px);
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.chroma-card:hover .chroma-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chroma-info .name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #fff 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chroma-info .handle {
+  font-size: 0.875rem;
+  color: #a855f7;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.chroma-info .role {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Spotlight overlay - Purple/Pink theme matching */
+.chroma-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    transparent 0%,
+    rgba(17, 17, 20, 0.7) calc(var(--r) * 0.6),
+    rgba(17, 17, 20, 0.85) var(--r)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 10;
+  border-radius: 32px;
+}
+
+.chroma-grid:hover .chroma-overlay {
+  opacity: 1;
+}
+
+/* Fade layer - subtle darkening */
+.chroma-fade {
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 20, 0.4);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  z-index: 5;
+  border-radius: 32px;
+}
+
+/* Glow effect on hover per card */
+.chroma-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    135deg,
+    var(--card-border, #8b5cf6) 0%,
+    transparent 50%
+  );
+  border-radius: 24px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.chroma-card:hover::before {
+  opacity: 0.5;
+}
+
+/* Shine sweep effect */
+.chroma-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.05) 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%) translateX(var(--mouse-x, 0));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.chroma-card:hover::after {
+  opacity: 1;
+}
