@@ -1,4 +1,3 @@
-import AppRoutes from "./routes/AppRoutes";
 import { ThemeProvider } from "./context/ThemeContext";
 import { AlertProvider } from "./context/AlertContext";
 import AuroraBackground from "./components/AuroraBackground";
@@ -13,9 +12,6 @@ function App() {
         
         {/* Temporarily bypass router for testing */}
         <OnePage />
-        
-        {/* Main App Routes */}
-        {/* <AppRoutes /> */}
       </AlertProvider>
     </ThemeProvider>
   );
